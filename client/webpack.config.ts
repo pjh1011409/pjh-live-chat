@@ -103,10 +103,10 @@ if (isDevelopment && config.plugins) {
       overlay: {
         useURLPolyfill: true,
       },
-    }),
+    })
   );
   config.plugins.push(
-    new BundleAnalyzerPlugin({ analyzerMode: 'server', openAnalyzer: false }),
+    new BundleAnalyzerPlugin({ analyzerMode: 'server', openAnalyzer: false })
   );
 }
 if (!isDevelopment && config.plugins) {
