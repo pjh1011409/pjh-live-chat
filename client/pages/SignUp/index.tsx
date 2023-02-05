@@ -63,10 +63,6 @@ const SignUp = () => {
     [email, nickname, password, mismatchError]
   );
 
-  // if (userData === undefined) {
-  //   return <div>로딩중...</div>;
-  // }
-
   if (userData) {
     return <Navigate replace to="/workspace/sleact" />;
   }
