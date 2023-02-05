@@ -1,3 +1,4 @@
+import LoadSpinner from '@components/LoadSpinner';
 import React, { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
@@ -6,7 +7,7 @@ const LogIn = React.lazy(() => import('@pages/LogIn'));
 const SignUp = React.lazy(() => import('@pages/SignUp'));
 
 const App = () => (
-  <Suspense fallback={<div>Loading</div>}>
+  <Suspense fallback={<LoadSpinner />}>
     <Routes>
       <Route path="/" element={<Navigate replace to="/login" />} />
       <Route path="/login" element={<LogIn />} />
