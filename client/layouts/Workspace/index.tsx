@@ -33,11 +33,13 @@ import {
   Workspaces,
   WorkspaceWrapper,
 } from './styles';
+import useSocket from '@hooks/useSocket';
 
 const Workspace = () => {
   const params = useParams<{ workspace?: string }>();
-  // console.log('params', params, 'location', location, 'routeMatch', routeMatch, 'history', history);
   const { workspace } = params;
+  const [socket, disconnectSocket] = useSocket(workspace);
+
   const { data: userData, mutate: revalidateUser } = useSWR<IUser | false>(
     '/api/users',
     fetcher
@@ -91,6 +93,22 @@ const Workspace = () => {
   const toggleWorkspaceModal = useCallback(() => {
     setShowWorkspaceModal(prev => !prev);
   }, []);
+
+  useEffect(() => {
+    return () => {
+      console.info('disconnect socket', workspace);
+      disconnectSocket();
+    };
+  }, [disconnectSocket, workspace]);
+  useEffect(() => {
+    if (channelData && userData) {
+      console.info('로그인하자', socket);
+      socket?.emit('login', {
+        id: userData?.id,
+        channels: channelData.map(v => v.id),
+      });
+    }
+  }, [socket, userData, channelData]);
 
   if (userData === false) {
     return <Navigate replace to="/login" />;
