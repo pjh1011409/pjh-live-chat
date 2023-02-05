@@ -67,7 +67,12 @@ const InviteChannelModal: FC<Props> = ({
       <form onSubmit={onInviteMember}>
         <Label id="member-label">
           <span>채널 멤버 초대</span>
-          <Input id="member" value={newMember} onChange={onChangeNewMember} />
+          <Input
+            id="member"
+            value={newMember}
+            onChange={onChangeNewMember}
+            placeholder="초대할 이메일을 입력하세요"
+          />
         </Label>
         <Button type="submit">초대하기</Button>
       </form>
