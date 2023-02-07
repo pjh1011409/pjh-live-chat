@@ -19,7 +19,7 @@
 
 <br>
 
-##💡 Intro
+## 💡 Intro
 
 <strong> Slack을 클론코딩하여 제작한 실시간 채팅 프로젝트입니다. </strong>
 
