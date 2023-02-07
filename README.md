@@ -1,30 +1,39 @@
 ## 📲 PJH's Live Chat ⌨️
 
+<p align="center"> 
+💡 Intro &nbsp; <strong>|</strong> &nbsp;
+📖 Learn & Study &nbsp; <strong>|</strong> &nbsp;
+🗓 프로젝트 기간&nbsp; <strong>|</strong> &nbsp;
+📎 Link &nbsp; <strong>|</strong> &nbsp;
+🍀 나의 개발일지 &nbsp; <strong>|</strong> &nbsp; 
+</p>
+<p align="center"> 
+⚙️ 주요 기능 &nbsp; <strong>|</strong> &nbsp; 
+💻 Service Architecture &nbsp; <strong>|</strong> &nbsp; 
+📄 Project Architecture &nbsp; <strong>|</strong> &nbsp;
+🛠 Tools &nbsp; <strong>|</strong> &nbsp;
+🎥 GIF
+<br></p>
+
+---
+
+<br>
+
+##💡 Intro
+
 <strong> Slack을 클론코딩하여 제작한 실시간 채팅 프로젝트입니다. </strong>
+
 <br>
 👍  3일이라는 짧은 기간 내에 Socket.io를 이용하여 양방향 데이터 통신을 구현해보는 시간을 가졌으며 개발환경 구축, 컴포넌트 구조화, 다양한 라이브러리, 노하우들을 얻은 아주 알찬 프로젝트입니다.
 
 <br>
 
-------
 
 
-<p align="center"> 
-📖 Learn & Study &nbsp; <strong>|</strong> &nbsp;
-🗓 프로젝트 기간&nbsp; <strong>|</strong> &nbsp;
-📎 Link &nbsp; <strong>|</strong> &nbsp;
-🍀 나의 개발일지 &nbsp; <strong>|</strong> &nbsp; 
-⚙️ 주요 기능
-</p>
-<p align="center"> 
-💻 Service Architecture &nbsp; <strong>|</strong> &nbsp; 
-📄 Project Architecture &nbsp; <strong>|</strong> &nbsp;
-🛠 Tools &nbsp; <strong>|</strong> &nbsp;
-🔥 Issue & TroubleShooting &nbsp; <strong>|</strong> &nbsp;
-🎥 GIF
-<br></p>
 
-------
+
+<br>
+
 
 ## 📖 Learn & Study
 
@@ -55,10 +64,10 @@
   - 이미지 끌어서 업로드하기 
 
 - ##### 다양한 라이브러리
-  - gravatar : 랜덤 아바타 이미지 생성
-  - react-mentions : 유저 언급 기능 in input
-  - react-custom-scrollbars-2 : 유연하고 편집 가능한 스크롤 
-  - autosize : 자동 크기 조정 영역 
+  - `gravatar` : 랜덤 아바타 이미지 생성
+  - `react-mentions` : 유저 언급 기능 in input
+  - `react-custom-scrollbars-2` : 유연하고 편집 가능한 스크롤 
+  - `autosize` : 자동 크기 조정 영역 
 
 
 
@@ -90,10 +99,11 @@
 - [Start & Setting](https://velog.io/@pjh1011409/PJHs-live-chat-Start-Setting)
 - [SignUp / LogIn](https://velog.io/@pjh1011409/PJHs-live-chat-Start-Setting-230nn1ol)
 - [Menu](https://velog.io/@pjh1011409/PJHs-live-chat-SignUp-LogIn)
-- [Channel](https://velog.io/@pjh1011409/PJHs-live-chat-Channel)
-- [Direct Message](https://velog.io/@pjh1011409/PJHs-live-chat-Direct-Message)
 - [Modal](https://velog.io/@pjh1011409/PJHs-live-chat-Menu-Modal-2nx59m4c)
-- [Chat](https://velog.io/@pjh1011409/PJHs-live-chat-Menu-Modal)
+- [Socket.io](https://velog.io/@pjh1011409/PJHs-live-chat-Socket.io)
+- [Chat Box](https://velog.io/@pjh1011409/PJHs-live-chat-Menu-Modal)
+
+- [Chat List](https://velog.io/@pjh1011409/PJHs-live-chat-Channel)
 - [Code Splitting](https://velog.io/@pjh1011409/React-Code-Splitting)
 
 <br>
@@ -132,7 +142,8 @@
 
 ## 💻 Service Architecture
 
-<img width="800" alt="스크린샷 2023-01-03 오후 7 56 16" src="https://user-images.githubusercontent.com/81337674/210350458-a8aa56c1-09ef-469f-8840-78324c348273.png">
+<img width="1052" alt="스크린샷 2023-02-07 오후 5 01 10" src="https://user-images.githubusercontent.com/81337674/217186431-9dc7e6d8-e2a3-4baf-98b6-415d10ef2e38.png">
+
 
 <br>
 
@@ -226,80 +237,6 @@
 
 
 
-<br>
-
-# 🔥 Issue & TroubleShooting
-
-### 👉 invalidateQueries vs 낙관적 업데이트
-
-- **Issue**
-  - 장바구니 상품 수량 변경시 invalidateQueries를 사용하여 기존 query를 무효화시켜 최산화된 데이터를 가져오도록 하였다. 하지만, 해당 항목에 대한 쿼리를 다시 가져오고 이미 가지고 있는 데이터에 대한 네트워크 호출은 낭비였고, 배포 후 수량 변경시 수량이 느리게 반영되는 것을 확인.
-- **trouble shooting**
-  - 서버 업데이트를 하기 전에 미리 화면의 UI를 바꿔준 후, 서버와의 통신 결과에 따라 확정 / 롤백을 결정하는 방식의 낙관적 업데이트를 구현.
-
----
-
-### 👉 체크박스 상태값 기억하기
-
-- **Issue**
-  - 장바구니에 체크된 데이터를 기억하지 못하고 페이지 이동후 체크가 풀려버리는 현상 발생.
-- **trouble shooting**
-  - 장바구니페이지가 렌더링될 때마다 장바구니의 상품 중에 체크되었던 상품의 id값을 기억해 check값이 true가 되게 만든다.
-    - data-\*: 특정한 데이터를 DOM요소에 저장
-    - dataset: 에 대한 값을 읽어들언다.
-
-```
-// comonents/cart/CartItem.tsx
-<input ... data-id={id} ... />
-
-
-// components/cart/index.tsx
-useEffect(() => {
-    checkedCartData.forEach((item) => {
-      const itemRef = checkboxRefs.find(
-        (ref) => ref.current!.dataset.id === item.id
-      );
-      if (itemRef) itemRef.current!.checked = true;
-    });
-    setAllCheckedFromItems();
-  }, []);
-```
-
----
-
-### 👉 Query Key 고유성
-
-- **Issue**
-  - Admin페이지와 Product페이지는 공통된 graphQL을 통해 상품데이터를 가져온다. 단, admin페이지에서는 삭제된 상품이 출력되고, Product페이지에서는 삭제된 상품은 미출력되는 조건을 가지고 있다.
-    하지만, 둘다 같은 데이터를 출력하는 현상 발생.
-- **trouble shooting**
-  - Query Key값을 고유한 값으로 설정하여 서로 다른 데이터라는 것을 인지시키기
-
-```
-// Product Page
-useInfinityQuery<Products>(
-  [QueryKeys.PRODUCTS, "products"],
-  ...
-  )
-
-// Admin Page
-useInfinityQuery<Products>(
-  [QueryKeys.PRODUCTS, "admin"],
-  ...
-  )
-```
-
----
-
-### 👉 장바구니 데이터 무한 랜더링 발생
-
-- **Issue**
-  - NavBar에 장바구니에 담긴 상품 수량을 출력하기 위해, 장바구니의 데이터를 invalidQueries를 사용하여 실시간으로 호출. 이 과정에서 데이터를 계속해서 Refetching하여 무한 랜더링이 발생한다.
-    이유는 장바구니에 상품이 추가된 것으로 navBar에서는 새로운 값을 가져온다. 그리고, 새롭게 가져온 것이 또다시 데이터가 변경되었다고 판단되어 계속하여 fetching이 이루어지는 것 같다. 개발 중에 여러번 서버가 다운되었는데 이 것이 원인이었던 것 같다. ㅜㅜ
-- **trouble shooting**
-  - Recoil을 통해 수량을 전역으롯 상태 관리히여 장바구니 추가 버튼 클릭시 navBar에서 구독했던 상태값을 가져오게 하였다.
-
-<br>
 
 <br>
 
