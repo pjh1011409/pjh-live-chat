@@ -250,7 +250,7 @@
 |**SignUp**|**LogIn / LogOut**|
 |:----: | :------: |
 |![회원가입기능](https://user-images.githubusercontent.com/81337674/216837368-9fc49e88-c75c-4027-bc2a-f91fb54a6a58.gif)|  ![로그인 로그아웃](https://user-images.githubusercontent.com/81337674/216837370-a4c9c062-54e9-4f92-a881-d25014d9eac2.gif) |
-|**Create Workspace / channel **|**Invite User** |                                                   |
+|**Create Workspace / channel**|**Invite User** |                                                   |
 | ![워크스페이스, 채널 생성](https://user-images.githubusercontent.com/81337674/216837397-04dca83e-cfca-4259-9cbf-1e737be10029.gif)    | ![사용자 초대](https://user-images.githubusercontent.com/81337674/216837403-0122b7a0-d4cc-452b-af2c-b909a07292ae.gif) |
 |**Chatting**|**Image Drag & Drop** |
 | ![채팅하기](https://user-images.githubusercontent.com/81337674/216837416-6d704290-b612-4c01-afff-b3b016a2fc50.gif) |    ![이미지 업로드](https://user-images.githubusercontent.com/81337674/216837422-e4166ad0-7ce9-40c0-aac7-ff789c46e68e.gif)     |
